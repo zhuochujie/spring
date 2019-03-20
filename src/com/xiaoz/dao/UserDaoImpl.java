@@ -7,6 +7,6 @@ package com.xiaoz.dao;
 public class UserDaoImpl implements IUserDao{
     @Override
     public void add(User user){
-        System.out.println("dao 添加用户：" + user);
+        System.out.println("dao 添加用户：" +  user);
     }
 }
