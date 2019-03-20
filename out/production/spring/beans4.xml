@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!--xmlns   xml namespace-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--构造方法注入属性值-->
+    <!--相当于调用public Student(String username, String password)构造方法-->
+    <!--<bean id="stu" class="com.xiaoz.model.Student">
+        <constructor-arg name="username" value="xiaoz"></constructor-arg>
+        <constructor-arg name="password" value="132"></constructor-arg>
+    </bean>-->
+
+    <!--<bean id="stu" class="com.xiaoz.model.Student">
+        相当于调用public Student(String username, int age)构造方法&ndash;&gt;
+        <constructor-arg name="username" value="xiaoz"></constructor-arg>
+        <constructor-arg name="age" value="12"></constructor-arg>
+    </bean>-->
+
+    <!--通过索引加类型给构造方法赋值-->
+    <!--<bean id="stu" class="com.xiaoz.model.Student">
+        <constructor-arg index="0" value="xiaoz" type="java.lang.String"></constructor-arg>
+        <constructor-arg index="1" value="12" type="int"></constructor-arg>
+    </bean>-->
+
+    <!--2.通过set方法注入属性值-->
+    <!--<bean id="stu" class="com.xiaoz.model.Student">
+        <property name="username" value="xiaoZ"></property>
+        <property name="password" value="321"></property>
+        <property name="age" value="19"></property>
+    </bean>-->
+
+    <!--3.通过p命名空间注入-->
+    <bean id="stu"
+          class="com.xiaoz.model.Student"
+          p:username="卓楚杰"
+          p:password="231"
+          p:age="19">
+    </bean>
+</beans>
