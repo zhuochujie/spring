@@ -16,11 +16,17 @@ public class Lesson09 {
         //拿到service
         ApplicationContext context = new ClassPathXmlApplicationContext("beans09.xml");
         //获取action
-        UserAction Useraction = context.getBean(UserAction.class);
+        UserAction useraction = context.getBean(UserAction.class);
 
         User user = new User();
         user.setUsername("xaioZ");
         user.setPassword("123456");
-        Useraction.save(user);
+        useraction.save(user);
+
+        UserAction useraction2 = context.getBean(UserAction.class);
+        System.out.println(useraction);
+        System.out.println(useraction2);
+
+        context.getClass().getMethod("close").invoke(context);
     }
 }
